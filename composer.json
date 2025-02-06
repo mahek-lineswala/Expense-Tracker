@@ -1,0 +1,18 @@
+{
+    "name": "jaypandya/expense-tracker",
+    "description": "A simple expense tracker with Google login.",
+    "require": {
+        "google/apiclient": "^2.18"
+    },
+    "autoload": {
+        "psr-4": {
+            "Jaypandya\\ExpenseTracker\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Jay Pandya",
+            "email": "jaypandya428@gmail.com"
+        }
+    ]
+}
