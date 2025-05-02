@@ -1,22 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>eTrackr</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+<style>
+  .jakarta-font {
+    font-family: 'Plus Jakarta sans';
+  }
+</style>
 </head>
-<body class="bg-black text-gray-800">
-
+<body class="bg-black text-gray-800 jakarta-font ">
+ 
   <!-- Navbar -->
-  <header class="bg-black shadow-md ">
-    <div class="mx-auto px-6 py-4 flex justify-between items-center mt-4">
-      <h1 class="text-2xl font-bold text-[#12D861] pl-14">eTrackr</h1>
+  <header class="bg-black shadow-md">
+    <div class=" w-full mx-auto px-6 py-4 flex justify-between items-center pt-8 fixed backdrop-blur-sm">
+      <h1 class="text-2xl font-bold text-[#12D861] pl-14"><span class="text-[#FF8A22]">e</span>Trackr</h1>
       <nav>
         <ul class="flex space-x-12 text-white pr-8">
           <li><a href="#" class="hover:text-indigo-600">Home</a></li>
           <li><a href="#features" class="hover:text-indigo-600">Features</a></li>
+          <li><a href="#FAQ" class="hover:text-indigo-600">FAQs</a></li>
           <li><a href="#contact" class="hover:text-indigo-600">Contact</a></li>
           <li><a href="./login.html" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-800">Login</a></li>
         </ul>
@@ -27,7 +36,7 @@
   <!-- Hero Section -->
   <section class="py-36 bg-black text-center flex">
     <div class="container mx-auto px-6 mt-12 ">
-        <h2 class="text-4xl font-bold mb-4 text-[#4BD482]">Take Control of Your Spending!</h2>
+        <h2 class="text-4xl font-bold mb-4 text-[#12D861]">Take Control of Your Spending!</h2>
       <p class="text-white my-6 mx-auto text-center px-16 ">
         Effortlessly manage your finances with our all-in-one expense tracker. Monitor your daily spending, create custom budgets,
          and get smart insights to improve your financial habits. Whether you're saving for a goal or just trying to stay on top of
@@ -38,49 +47,47 @@
         Get Started
       </a>
     </div>
+
  <!-- Spline 3D Viewer -->
  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.89/build/spline-viewer.js"></script>
  <spline-viewer url="https://prod.spline.design/MXGqvPECDwvv7NZO/scene.splinecode"></spline-viewer>
-
-
   </section>
-
   <!-- Features Section -->
   <section id="features" class="pb-20 pt-10">
     <div class="container mx-auto px-6 text-center py-10">
-      <h3 class="text-2xl font-bold mb-12 text-[#4BD482]">Features</h3>
+      <h3 class="text-2xl font-bold mb-12 text-[#12D861]">Features</h3>
       <div class="grid md:grid-cols-3 gap-8 mx-12">
         <div class="bg-[#4E1584] p-6 rounded-lg shadow transition hover:bg-[#3C0F67]">
-          <h4 class="font-semibold text-lg text-[#4BD482] mb-2">Expense Logging 🧾 </h4>
+          <h4 class="font-semibold text-lg text-[#12D861] mb-2">Expense Logging 🧾 </h4>
           <p class="text-white">Track every rupee (or dollar) you spend—instantly.
             Easily add daily transactions, categorize them (food, transport, bills, etc.), and attach notes or receipts for future reference.
             </p>
         </div>
         <div class="bg-[#4E1584] p-6 rounded-lg shadow transition hover:bg-[#3C0F67] ">
-          <h4 class="font-semibold text-lg text-[#4BD482] mb-2">Smart Budgeting 📊 </h4>
+          <h4 class="font-semibold text-lg text-[#12D861] mb-2">Smart Budgeting 📊 </h4>
           <p class="text-white">Set monthly or weekly budgets across different categories.
             Get visual feedback when you’re approaching or exceeding limits, and learn where you can cut back or reallocate your funds.</p>
         </div>
         <div class="bg-[#4E1584] p-6 rounded-lg shadow transition hover:bg-[#3C0F67]">
-          <h4 class="font-semibold text-lg text-[#4BD482] mb-2"> Visual Insights & Analytics 📈</h4>
+          <h4 class="font-semibold text-lg text-[#12D861] mb-2"> Visual Insights & Analytics 📈</h4>
           <p class="text-white">View your financial data through interactive charts and graphs.
             See where your money goes, track trends, identify spending patterns, and make informed decisions to improve your financial well-being.
          </p>
         </div>
         <div class="bg-[#4E1584] p-6 rounded-lg shadow transition hover:bg-[#3C0F67]">
-            <h4 class="font-semibold text-lg text-[#4BD482] mb-2">  Alerts & Reminders 🔔</h4>
+            <h4 class="font-semibold text-lg text-[#12D861] mb-2">  Alerts & Reminders 🔔</h4>
             <p class="text-white">Never miss a bill or budget update again.
                 Get automatic reminders for upcoming payments, low balances, or overspending warnings directly to your dashboard or email.                
            </p>
         </div>
         <div class="bg-[#4E1584] p-6 rounded-lg shadow transition hover:bg-[#3C0F67]">
-            <h4 class="font-semibold text-lg text-[#4BD482] mb-2">Secure & Private 🔐 </h4>
+            <h4 class="font-semibold text-lg text-[#12D861] mb-2">Secure & Private 🔐 </h4>
             <p class="text-white">Your data is encrypted and stored securely.
                 Only you have access to your personal financial history and information—your privacy is our priority.                
            </p>
         </div>
         <div class="bg-[#4E1584] p-6 rounded-lg shadow transition hover:bg-[#3C0F67]">
-            <h4 class="font-semibold text-lg text-[#4BD482] mb-2">Mobile-Friendly Interface 📱 </h4>
+            <h4 class="font-semibold text-lg text-[#12D861] mb-2">Mobile-Friendly Interface 📱 </h4>
             <p class="text-white">Track your expenses on the go with a responsive design that works across all devices—phones, tablets, and desktops.
            </p>
         </div>
@@ -88,21 +95,122 @@
     </div>
   </section>
 
+  <!--FaQ section-->
+  <section id="FAQ" class=" text-white py-16 px-6 ">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl font-bold text-center mb-20 mt-14 text-[#12D861]">FAQs</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- Single FAQ Item -->
+        <details class="  bg-gradient-to-br from-[#18472B] to-[#21663D] hover:text-[#FF8A22] rounded-xl p-4">
+          <summary class="cursor-pointer font-semibold text-lg">What is this eTrackr?</summary>
+          <p class="mt-2 text-l text-white">It's a simple yet powerful tool to help you track your daily spending, set budgets, and stay in control of your finances.</p>
+        </details>
+        
+        <details class="bg-gradient-to-r from-[#18472B] to-[#21663D] hover:text-[#FF8A22] rounded-xl p-4">
+          <summary class="cursor-pointer font-semibold text-lg">How does it help with budgeting?</summary>
+          <p class="mt-2 text-l text-white">You can set monthly or category-wise budgets and get alerts when you’re about to exceed them.</p>
+        </details>
+        
+        <details class="bg-gradient-to-r from-[#18472B] to-[#21663D] hover:text-[#FF8A22] rounded-xl p-4">
+          <summary class="cursor-pointer font-semibold text-lg">Is this app free to use?</summary>
+          <p class="mt-2 text-l text-white">Yes! It's completely free to use with all core features available to everyone.</p>
+        </details>
+        
+        <details class="bg-gradient-to-r from-[#18472B] to-[#21663D] hover:text-[#FF8A22] rounded-xl p-4">
+          <summary class="cursor-pointer font-semibold text-lg">Can I use it on my phone?</summary>
+          <p class="mt-2 text-l text-white">Absolutely. The app is fully responsive and works great on mobile, tablet, and desktop devices.</p>
+        </details>
+        
+        <details class="bg-gradient-to-r from-[#18472B] to-[#21663D] hover:text-[#FF8A22] rounded-xl p-4">
+          <summary class="cursor-pointer font-semibold text-lg">What types of expenses can I track?</summary>
+          <p class="mt-2 text-l text-white">You can track anything—from groceries and rent to subscriptions, travel, and custom categories.</p>
+        </details>
+        
+        <details class="bg-gradient-to-r from-[#18472B] to-[#21663D] hover:text-[#FF8A22] rounded-xl p-4">
+          <summary class="cursor-pointer font-semibold text-lg">Is my data secure?</summary>
+          <p class="mt-2 text-l text-white">Yes, your data is stored securely using modern encryption practices to ensure privacy and safety.</p>
+        </details>
+        
+        <details class="bg-gradient-to-r from-[#18472B] to-[#21663D] hover:text-[#FF8A22] rounded-xl p-4">
+          <summary class="cursor-pointer font-semibold text-lg">Can I export my data?</summary>
+          <p class="mt-2 text-l text-white">We're currently working on adding export options for PDF and Excel. Stay tuned—it's coming soon!</p>
+        </details>
+        
+        <details class="bg-gradient-to-r from-[#18472B] to-[#21663D] hover:text-[#FF8A22] rounded-xl p-4">
+          <summary class="cursor-pointer font-semibold text-lg">Do I need to create an account?</summary>
+          <p class="mt-2 text-l text-white">You cannot use it without an account as creating one lets us back up your data and sync across devices.</p>
+        </details>
+        
+        <details class="bg-gradient-to-r from-[#18472B] to-[#21663D] hover:text-[#FF8A22] rounded-xl p-4">
+          <summary class="cursor-pointer font-semibold text-lg">Can I manage multiple budgets?</summary>
+          <p class="mt-2 text-l text-white">Yes, you can create and manage separate budgets for different goals or categories.</p>
+        </details>
+        
+        <details class="bg-gradient-to-r from-[#18472B] to-[#21663D] hover:text-[#FF8A22] rounded-xl p-4">
+          <summary class="cursor-pointer font-semibold text-lg">How do I get started?</summary>
+          <p class="mt-2 text-l text-white">Just sign up or open the app, and start by adding your first expense—it’s that easy!</p>
+        </details>        
+      </div>
+    </div>
+  </section>
+  
+
   <!-- Contact Section -->
-  <section id="contact" class="bg-black py-16">
+  <section id="contact" class="bg-gray-900 py-16">
     <div class="container mx-auto px-6 text-center">
       <h3 class="text-2xl font-bold mb-4 text-white">Stay in Touch</h3>
-      <p class="text-white` mb-6">Have questions or suggestions? We'd love to hear from you.</p>
+      <p class="text-white mb-6">Have questions or suggestions? We'd love to hear from you.</p>
       <a href="mailto:support@expensetracker.com" class="text-white font-medium hover:underline">support@expensetracker.com</a>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-black shadow-inner py-6">
-    <div class="container mx-auto px-6 text-center text-sm text-gray-500">
-      © 2025 ExpenseTracker. All rights reserved.
+  <footer class="bg-gray-900 text-gray-300 py-8 px-6 ">
+    <div class="max-w-7xl  grid grid-cols-2 md:grid-cols-4 ml-48">
+      
+      <div>
+        <h3 class="text-white font-semibold mb-4">Product</h3>
+        <ul class="space-y-2">
+          <li><a href="#" class="hover:text-white">Features</a></li>
+          <li><a href="#" class="hover:text-white">Pricing</a></li>
+          <li><a href="#" class="hover:text-white">Mobile App</a></li>
+          <li><a href="#" class="hover:text-white">Integrations</a></li>
+        </ul>
+      </div>
+  
+      <div>
+        <h3 class="text-white font-semibold mb-4">Company</h3>
+        <ul class="space-y-2">
+          <li><a href="#" class="hover:text-white">About Us</a></li>
+          <li><a href="#" class="hover:text-white">Careers</a></li>
+          <li><a href="#" class="hover:text-white">Blog</a></li>
+          <li><a href="#" class="hover:text-white">Contact</a></li>
+        </ul>
+      </div>
+  
+      <div>
+        <h3 class="text-white font-semibold mb-4">Support</h3>
+        <ul class="space-y-2">
+          <li><a href="#" class="hover:text-white">Help Center</a></li>
+          <li><a href="#" class="hover:text-white">FAQ</a></li>
+          <li><a href="#" class="hover:text-white">Report Issue</a></li>
+          <li><a href="#" class="hover:text-white">Feedback</a></li>
+        </ul>
+      </div>
+  
+      <div>
+        <h3 class="text-white font-semibold mb-4">Legal</h3>
+        <ul class="space-y-2">
+          <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+          <li><a href="#" class="hover:text-white">Terms of Service</a></li>
+          <li><a href="#" class="hover:text-white">Cookie Policy</a></li>
+        </ul>
+      </div>
+  
+    </div>
+    <div class="mt-12 text-center text-sm text-gray-500">
+      © 2025 Expensely. All rights reserved.
     </div>
   </footer>
-
 </body>
 </html>
