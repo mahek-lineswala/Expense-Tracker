@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->execute(['user_id' => $user_id, 'amount' => $amount, 'category' => $category, 'description' => $description, 'date' => $date]);
 
     // Redirect to the dashboard
-    header("Location: dashboard.php");
+    header("Location: addexpense.php");
     exit();
 }
 ?>

@@ -1,58 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Expense Tracker - Login</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
-<style>
-  .jakarta-font {
-    font-family: 'Plus Jakarta sans';
-  }
-</style>
-  </head>
-  <body class="bg-black jakarta-font">
-    <header class="bg-black shadow-md">
-      <div class=" w-full mx-auto px-6 py-4 flex justify-between items-center pt-8 fixed backdrop-blur-sm">
-        <h1 class="text-2xl font-bold text-[#12D861] pl-14"><span class="text-[#FF8A22]">e</span>Trackr</h1>
-        <nav>
-          <ul class="flex space-x-12 text-white pr-8">
-            <li><a href="./index.html" class="hover:text-indigo-600">Home</a></li>
-            <li><a href="./index.html#features" class="hover:text-indigo-600">Features</a></li>
-            <li><a href="./index.html#FAQ" class="hover:text-indigo-600">FAQs</a></li>
-            <li><a href="./index.html#contact" class="hover:text-indigo-600">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-      <div class=" flex justify-center space-x-48 items-center">
-        <div class="text-center bg- mt-32 px-16 py-32 bg-white/10 backdrop-blur-md border border-white/20 shadow-2xl rounded-lg ">
-          <h1 class="text-4xl font-bold mb-4 text-white">
-            Welcome  <br />
-            <span class="text-3xl">to</span> <br />
-            <span class="text-[#FF8A22]">e</span><span class="text-[#12D861]">Trackr</span>
-          </h1>
-          <p class="text-white mb-6">Login to manage your expenses easily</p>
-          <br>
-          <a
-            href="http://localhost/expense-tracker/google-login.php"
-            class="flex items-center justify-center bg-gray-800 text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-500"
-          >
-            <img
-              src="./icons8-google-48.png"
-              alt="Google Logo"
-              class="w-5 h-5 mr-2"
-            />
-            Login with Google
-          </a>
-        </div>
-        <span class="mt-44">
-          <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
-        <dotlottie-player src="https://lottie.host/f2cd98fb-8d8d-40ce-91fc-62c3173f7c7f/vCC70veI7J.lottie" background="transparent" speed="1" style="width: 300px; height: 300px" loop autoplay></dotlottie-player>
-        </span>
-      </div>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Expense Tracker - Login</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1><span class="highlight-orange">e</span><span class="highlight-green">Trackr</span></h1>
+    <nav>
+      <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./index.html#features">Features</a></li>
+        <li><a href="./index.html#FAQ">FAQs</a></li>
+        <li><a href="./index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="main-content">
+    <div class="login-box">
+      <h1>
+        Welcome <br />
+        <span>to</span> <br />
+        <span class="highlight-orange">e</span><span class="highlight-green">Trackr</span>
+      </h1>
+      <p>Login to manage your expenses easily</p>
+      <a href="http://localhost/expense-tracker/google-login.php" class="login-button">
+        <img src="./icons8-google-48.png" alt="Google Logo" />
+        Login with Google
+      </a>
+    </div>
+
+    <div class="lottie-wrapper">
+      <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+      <dotlottie-player
+        src="https://lottie.host/f2cd98fb-8d8d-40ce-91fc-62c3173f7c7f/vCC70veI7J.lottie"
+        background="transparent"
+        speed="1"
+        style="width: 300px; height: 300px"
+        loop
+        autoplay
+      ></dotlottie-player>
+    </div>
+  </div>
+</body>
 </html>

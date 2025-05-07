@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #000;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: white;
+  }
+  
+  header {
+    background-color: #000;
+    position: fixed;
+    width: 100%;
+    padding: 2rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(6px);
+    z-index: 1000;
+  }
+  
+  header h1 {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .highlight-orange {
+    color: #FF8A22;
+  }
+  
+  .highlight-green {
+    color: #12D861;
+  }
+  
+  nav ul {
+    display: flex;
+    gap: 3rem;
+    list-style: none;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  nav a:hover {
+    color: #6366f1;
+  }
+  
+  .main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12rem;
+    padding-top: 10rem;
+  }
+  
+  .login-box {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    border-radius: 1rem;
+    padding: 6rem 4rem;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  }
+  
+  .login-box h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .login-box span {
+    font-size: 2rem;
+  }
+  
+  .login-box p {
+    margin: 1.5rem 0;
+    font-size: 1rem;
+  }
+  
+  .login-button {
+    background-color: #1f2937;
+    color: white;
+    padding: 0.6rem 1rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: background-color 0.3s;
+  }
+  
+  .login-button:hover {
+    background-color: #3b82f6;
+  }
+  
+  .login-button img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .lottie-wrapper {
+    margin-top: 5rem;
+  }
+  

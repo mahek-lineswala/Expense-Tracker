@@ -25,56 +25,42 @@ $total_expenses = $stmt->fetch()['total_expenses'];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Expense Tracker - Dashboard</title>
+    <title> etrackr - Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+<style>
+  .jakarta-font {
+    font-family: 'Plus Jakarta sans';
+  }
+</style>
 </head>
-<body class="bg-gray-100 min-h-screen flex flex-col">
-    <nav class="bg-blue-600 text-white p-4 flex justify-between items-center">
-        <span class="text-xl font-bold">Expense Tracker</span>
-        <div class="flex items-center space-x-4">
-            <span><?php echo htmlspecialchars($user['name']); ?></span>
-            <img src="<?php echo !empty($user['picture']) ? htmlspecialchars($user['picture']) : 'default-profile.png'; ?>" alt="Profile" class="w-10 h-10 rounded-full">
-            <a href="logout.php" class="bg-red-500 px-3 py-1 rounded text-white hover:bg-red-600">Logout</a>
-        </div>
-    </nav>
-
-    <div class="flex flex-1">
-        <main class="flex-1 p-6">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-                <div class="bg-white p-6 rounded-lg shadow">
-                    <h2 class="text-gray-700 text-lg font-bold">Total Balance</h2>
-                    <p class="text-2xl font-semibold">$<?php echo number_format($total_expenses, 2); ?></p>
+<body class="bg-[#1c1c1c] min-h-screen flex jakarta-font">
+    <div class="w-1/4 border-r">
+        <h2 class="text-[#12D861] text-3xl text-center mt-4 font-bold"><span class="text-[#FF8A22]">e</span>Trackr</h2>
+        <nav class="text-white text-2xl ml-28 mt-48">
+            <ul class="space-y-8">
+                <li><a href="" class="font-bold text-[#12D861]">Dashboard</a></li>
+                <li><a href="addexpense.php">Add expense</a></li>
+                <li><a href="transactions.php">Transactions</a></li>
+                <li><a href="logout.php" class="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700">Logout</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="w-3/4">
+        
+        <div class="flex flex-1">
+            <main class="flex-1 p-6 bg-[#1c1c1c]">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                    <div class="text-2xl text-white">Hi, <span><?php echo htmlspecialchars($user['name']);?>👋</span></div>
+                    <div class="bg-gray-300 p-6 rounded-lg shadow w-2/3 ml-20">
+                        <h2 class="text-gray-700 text-lg font-bold">Total Balance</h2>
+                        <p class="text-2xl font-semibold">$<?php echo number_format($total_expenses, 2); ?></p>
+                    </div>
                 </div>
-            </div>
-
-            <div class="bg-white p-6 rounded-lg shadow mb-6">
-                <h2 class="text-xl font-bold mb-4">Add Expense</h2>
-                <form method="POST" action="add-expense.php">
-                    <input type="number" name="amount" placeholder="Amount" required class="w-full p-2 border rounded mb-2">
-                    <input type="text" name="category" placeholder="Category" required class="w-full p-2 border rounded mb-2">
-                    <textarea name="description" placeholder="Description" class="w-full p-2 border rounded mb-2"></textarea>
-                    <input type="date" name="date" required class="w-full p-2 border rounded mb-2">
-                    <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded">Add Expense</button>
-                </form>
-            </div>
-
-            <div class="bg-white p-6 rounded-lg shadow">
-                <h2 class="text-xl font-bold mb-4">Recent Transactions</h2>
-                <ul>
-                    <?php if (empty($expenses)): ?>
-                        <li class="p-2 border-b">No transactions yet</li>
-                    <?php else: ?>
-                        <?php foreach ($expenses as $expense): ?>
-                            <li class="p-2 border-b">
-                                <?php echo htmlspecialchars($expense['category']); ?> - $<?php echo htmlspecialchars($expense['amount']); ?> 
-                                (<?php echo htmlspecialchars($expense['date']); ?>)
-                                <p><?php echo htmlspecialchars($expense['description']); ?></p>
-                            </li>
-                        <?php endforeach; ?>
-                    <?php endif; ?>
-                </ul>
-            </div>
-        </main>
+            </main>
+        </div>
     </div>
 </body>
 </html>
