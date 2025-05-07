@@ -33,17 +33,16 @@ $total_expenses = $stmt->fetch()['total_expenses'];
 </head>
 <body class="bg-[#1c1c1c] min-h-screen flex jakarta-font">
   <div class="w-1/4 border-r">
-    <h2 class="text-[#12D861] text-3xl text-center mt-4 font-bold"><span class="text-[#FF8A22]">e</span>Trackr</h2>
-    <nav class="text-white text-2xl ml-28 mt-48">
+    <h2 class="text-[#12D861] text-3xl text-center mt-4 font-bold fixed left-28 top-16"><span class="text-[#FF8A22]">e</span>Trackr</h2>
+    <nav class="text-white text-2xl ml-28 mt-48 fixed">
       <ul class="space-y-8">
         <li><a href="#" class="font-bold text-[#12D861]">Dashboard</a></li>
         <li><a href="addexpense.php">Add expense</a></li>
         <li><a href="transactions.php">Transactions</a></li>
-        <li><a href="logout.php" class="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700">Logout</a></li>
+        <li><a href="logout.php" class="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700 mt-8">Logout</a></li>
       </ul>
     </nav>
   </div>
-
   <div class="w-3/4">
     <div class="flex flex-1">
       <main class="flex-1 p-6 bg-[#1c1c1c]">
@@ -55,14 +54,21 @@ $total_expenses = $stmt->fetch()['total_expenses'];
           </div>
         </div>
 
-        <div class="max-w-xl mx-auto mt-10">
-          <h2 class="text-xl font-bold mb-4 text-white">Spending Overview</h2>
-          <canvas id="expenseChart" width="400" height="200"></canvas>
+        <div class="flex flex-col md:flex-row justify-center items-center gap-10">
+          <div class="max-w-xl mx-auto mt-10">
+            <h2 class="text-xl font-bold mb-4 text-white">Spending Overview</h2>
+            <canvas id="expenseChart" width="400" height="200"></canvas>
+          </div>
+          <div class="max-w-xl mx-auto mt-10">
+            <h2 class="text-xl font-bold mb-4 text-white">Expense Categories</h2>
+            <canvas id="expensePieChart" width="400" height="200"></canvas>
+          </div>
         </div>
+
       </main>
     </div>
     <!-- Subscription Section -->
-<div class="max-w-xl mx-auto mt-10">
+<div class="max-w-xl mx-auto mt-10 mb-20">
   <div class="flex justify-between items-center mb-4">
     <h2 class="text-xl font-bold text-white">Upcoming Subscriptions</h2>
     <button onclick="openSubModal()" class="bg-[#12D861] text-black font-bold px-4 py-1 rounded hover:bg-[#0fb951]">+ Manage</button>
@@ -173,6 +179,48 @@ function loadSubscriptions() {
 
 document.addEventListener('DOMContentLoaded', loadSubscriptions);
 </script>
-
+<script>
+  fetch('get-pie-data.php')
+    .then(res => res.json())
+    .then(data => {
+      const ctx = document.getElementById('expensePieChart').getContext('2d');
+      new Chart(ctx, {
+        type: 'pie',
+        data: {
+          labels: data.labels,
+          datasets: [{
+            label: 'Expense Categories',
+            data: data.totals,
+            backgroundColor: [
+              'rgba(255, 99, 132, 0.6)',
+              'rgba(54, 162, 235, 0.6)',
+              'rgba(255, 206, 86, 0.6)',
+              'rgba(75, 192, 192, 0.6)',
+              'rgba(153, 102, 255, 0.6)'
+            ],
+            borderColor: [
+              'rgb(244, 80, 115)',
+              'rgba(54, 162, 235, 1)',
+              'rgba(255, 206, 86, 1)',
+              'rgba(75, 192, 192, 1)',
+              'rgba(153, 102, 255, 1)'
+            ],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              position: 'top',
+              labels: {
+                color: '#ffffff'
+              }
+            }
+          }
+        }
+      });
+    });
+    </script>
 </body>
 </html>
