@@ -91,10 +91,20 @@ $total_expenses = $stmt->fetch()['total_expenses'];
   </div>
 
   <script>
-    fetch('get-chart-data.php')
+      fetch('get-chart-data.php')
       .then(res => res.json())
       .then(data => {
         const ctx = document.getElementById('expenseChart').getContext('2d');
+        const colors = [
+          'rgba(255, 99, 132, 0.6)',   // Red
+          'rgba(54, 162, 235, 0.6)',   // Blue
+          'rgba(255, 206, 86, 0.6)',   // Yellow
+          'rgba(75, 192, 192, 0.6)',   // Teal
+          'rgba(153, 102, 255, 0.6)',  // Purple
+          'rgba(255, 159, 64, 0.6)',   // Orange
+          'rgba(199, 199, 199, 0.6)'   // Gray
+        ];
+        const borderColors = colors.map(c => c.replace('0.6', '1'));
         new Chart(ctx, {
           type: 'bar',
           data: {
@@ -102,8 +112,8 @@ $total_expenses = $stmt->fetch()['total_expenses'];
             datasets: [{
               label: 'Monthly Expenses',
               data: data.amounts,
-              backgroundColor: 'rgba(59, 130, 246, 0.6)',
-              borderColor: 'rgba(59, 130, 246, 1)',
+              backgroundColor: colors.slice(0, data.labels.length),
+              borderColor: borderColors.slice(0, data.labels.length),
               borderWidth: 1
             }]
           },
@@ -133,6 +143,7 @@ $total_expenses = $stmt->fetch()['total_expenses'];
         });
       });
   </script>
+
   <script>
 function openSubModal() {
   document.getElementById('subModal').classList.remove('hidden');

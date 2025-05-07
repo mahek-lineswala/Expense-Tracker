@@ -49,7 +49,7 @@ $total_expenses = $stmt->fetch()['total_expenses'];
     </div>
     <div class="bg-gray-300 p-6 rounded-lg shadow mb-6 w-3/4">
                     <h2 class="text-xl font-bold mb-4">Add Expense</h2>
-                    <form method="POST" action="add-expense.php" >
+                    <form id="expenseForm" method="POST" action="add-expense.php" >
                         <input type="number" name="amount" placeholder="Amount" required class="w-full p-4 border rounded mb-2">
                         <select name="category" id="categorySelect" required class="w-full p-4 border rounded mb-2" onchange="toggleCustomCategory(this)">
                                 <option value="">Select Category</option>
@@ -67,24 +67,73 @@ $total_expenses = $stmt->fetch()['total_expenses'];
 
                                 <input type="text" name="custom_category" id="customCategoryInput" placeholder="Enter custom category"
                                     class="w-full p-4 border rounded mb-2 hidden">
-
-                                <script>
-                                function toggleCustomCategory(select) {
-                                    const customInput = document.getElementById('customCategoryInput');
-                                    if (select.value === 'Other') {
-                                    customInput.classList.remove('hidden');
-                                    customInput.required = true;
-                                    } else {
-                                    customInput.classList.add('hidden');
-                                    customInput.required = false;
-                                    }
-                                }
-                                </script>
-
+                               
                         <textarea name="description" placeholder="Description" class="w-full p-2 border rounded mb-2"></textarea>
                         <input type="date" name="date" required class="w-fit p-2 border rounded mb-2"><br>
                         <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded mt-1">Add Expense</button>
                     </form>
-                </div>
+                    <script>
+                            function toggleCustomCategory(select) {
+                                const customInput = document.getElementById('customCategoryInput');
+                                if (select.value === 'Other') {
+                                customInput.classList.remove('hidden');
+                                customInput.required = true;
+                                } else {
+                                customInput.classList.add('hidden');
+                                customInput.required = false;
+                                }
+                            }
+                            function showToast(message, bgColor = 'bg-green-600') {
+                                const toast = document.getElementById('toast');
+                                toast.className = `fixed top-5 right-5 text-white px-4 py-2 rounded shadow-lg z-50 ${bgColor}`;
+                                toast.textContent = message;
+                                toast.classList.remove('hidden');
+
+                                // Play sound
+                                if (bgColor === 'bg-green-600') {
+                                    document.getElementById('success-sound').play();
+                                } else if (bgColor === 'bg-red-600') {
+                                    document.getElementById('error-sound').play();
+                                }
+
+                                setTimeout(() => {
+                                    toast.classList.add('hidden');
+                                }, 3000);
+                            }
+
+                            document.getElementById('expenseForm').addEventListener('submit', async function (e) {
+                            e.preventDefault();
+                            const form = e.target;
+                            const formData = new FormData(form);
+
+                            const category = formData.get('category');
+                            const customCategory = formData.get('custom_category');
+                            if (category === 'Other' && customCategory.trim() !== '') {
+                                formData.set('category', customCategory.trim());
+                            }
+
+                            const response = await fetch('add-expense.php', {
+                                method: 'POST',
+                                body: formData
+                            });
+
+                            const result = await response.text();
+
+                            if (result.trim() === 'success') {
+                                showToast('✅ Expense added successfully!');
+                                form.reset();
+                                toggleCustomCategory({ value: '' }); // Hide custom input if shown
+                            } else {
+                                showToast('❌ Failed to add expense.', 'bg-red-600');
+                            }
+                            });
+                    </script>
+        </div>
+        <!-- Toast Notification -->
+        <div id="toast" class="hidden fixed top-5 right-5 text-white px-4 py-2 rounded shadow-lg z-50"></div>
+        <!-- Sound Effects -->
+        <audio id="success-sound" src="./sounds/ding.wav" preload="auto"></audio>
+        <audio id="error-sound" src="./sounds/error.wav" preload="auto"></audio>
+
     </body>
 </html>
