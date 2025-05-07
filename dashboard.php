@@ -30,6 +30,7 @@ $total_expenses = $stmt->fetch()['total_expenses'];
       font-family: 'Plus Jakarta Sans', sans-serif;
     }
   </style>
+  <link rel="icon" href="./money-bill-trend-up-solid (1).svg">
 </head>
 <body class="bg-[#0f172a] min-h-screen flex jakarta-font">
   <div class="w-1/4 border-r bg-[#1c1c1c]">
