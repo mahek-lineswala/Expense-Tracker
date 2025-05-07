@@ -31,33 +31,43 @@ $total_expenses = $stmt->fetch()['total_expenses'];
     }
   </style>
 </head>
-<body class="bg-[#1c1c1c] min-h-screen flex jakarta-font">
-  <div class="w-1/4 border-r">
+<body class="bg-[#0f172a] min-h-screen flex jakarta-font">
+  <div class="w-1/4 border-r bg-[#1c1c1c]">
     <h2 class="text-[#12D861] text-3xl text-center mt-4 font-bold fixed left-28 top-16"><span class="text-[#FF8A22]">e</span>Trackr</h2>
-    <nav class="text-white text-2xl ml-28 mt-48 fixed">
-      <ul class="space-y-8">
-        <li><a href="#" class="font-bold text-[#12D861]">Dashboard</a></li>
-        <li><a href="addexpense.php">Add expense</a></li>
-        <li><a href="transactions.php">Transactions</a></li>
-        <li><a href="logout.php" class="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700 mt-8">Logout</a></li>
-      </ul>
+    <nav class="text-white text-2xl ml-28 fixed h-screen flex flex-col justify-between">
+        <!-- Top Links -->
+        <ul class="space-y-8 mt-60">
+            <li><a href="#" class="font-bold text-[#12D861]">Dashboard</a></li>
+            <li><a href="addexpense.php">Add expense</a></li>
+            <li><a href="transactions.php">Transactions</a></li>
+        </ul>
+
+        <!-- Logout at Bottom -->
+        <ul class="mb-12">
+            <li>
+            <a href="logout.php" class="ml-4 bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 text-xl">
+                Logout
+            </a>
+            </li>
+        </ul>
     </nav>
+
   </div>
   <div class="w-3/4">
     <div class="flex flex-1">
-      <main class="flex-1 p-6 bg-[#1c1c1c]">
+      <main class="flex-1 p-6 ">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-          <div class="text-2xl text-white">Hi, <span><?php echo htmlspecialchars($user['name']); ?> 👋</span></div>
+          <div class="text-2xl text-white ml-14 font-bold"> Hello, <span><?php echo htmlspecialchars($user['name']); ?> 👋</span></div>
           <div class="bg-gray-300 p-6 rounded-lg shadow w-2/3 ml-20">
             <h2 class="text-gray-700 text-lg font-bold">Total Expenditure</h2>
             <p class="text-2xl font-semibold">$<?php echo number_format($total_expenses, 2); ?></p>
           </div>
         </div>
 
-        <div class="flex flex-col md:flex-row justify-center items-center gap-10">
+        <div class="flex flex-col md:flex-row justify-center items-start gap-10">
           <div class="max-w-xl mx-auto mt-10">
             <h2 class="text-xl font-bold mb-4 text-white">Spending Overview</h2>
-            <canvas id="expenseChart" width="400" height="200"></canvas>
+            <canvas id="expenseChart" width="400" height="400"></canvas>
           </div>
           <div class="max-w-xl mx-auto mt-10">
             <h2 class="text-xl font-bold mb-4 text-white">Expense Categories</h2>
@@ -68,10 +78,10 @@ $total_expenses = $stmt->fetch()['total_expenses'];
       </main>
     </div>
     <!-- Subscription Section -->
-<div class="max-w-xl mx-auto mt-10 mb-20">
+<div class=" ml-24 mt-10 mb-20">
   <div class="flex justify-between items-center mb-4">
     <h2 class="text-xl font-bold text-white">Upcoming Subscriptions</h2>
-    <button onclick="openSubModal()" class="bg-[#12D861] text-black font-bold px-4 py-1 rounded hover:bg-[#0fb951]">+ Manage</button>
+    <button onclick="openSubModal()" class="bg-[#12D861] text-black font-bold px-4 py-1 rounded hover:bg-[#0fb951] mr-36">+ Manage</button>
   </div>
   <ul id="subscriptionList" class="text-white space-y-2 text-sm">
     <!-- Subscription entries will be loaded here -->

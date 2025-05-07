@@ -35,27 +35,41 @@ $total_expenses = $stmt->fetch()['total_expenses'];
 </head>
 <body class="bg-[#1c1c1c] min-h-screen flex jakarta-font">
   <!-- Sidebar -->
-  <div class="w-1/4 border-r">
-    <h2 class="text-[#12D861] text-3xl text-center mt-4 font-bold"><span class="text-[#FF8A22]">e</span>Trackr</h2>
-    <nav class="text-white text-2xl ml-28 mt-48">
-      <ul class="space-y-8">
-        <li><a href="dashboard.php">Dashboard</a></li>
-        <li><a href="addexpense.php">Add expense</a></li>
-        <li><a href="transactions.php" class="font-bold text-[#12D861]">Transactions</a></li>
-        <li><a href="logout.php" class="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700">Logout</a></li>
-      </ul>
+  <div class="w-1/4 border-r ">
+    <h2 class="text-[#12D861] text-3xl text-center mt-4 font-bold fixed left-28 top-16"><span class="text-[#FF8A22]">e</span>Trackr</h2>
+    <nav class="text-white text-2xl ml-28 fixed h-screen flex flex-col justify-between">
+        <!-- Top Links -->
+        <ul class="space-y-8 mt-60">
+            <li><a href="dashboard.php">Dashboard</a></li>
+            <li><a href="addexpense.php">Add expense</a></li>
+            <li><a href="transactions.php" class="font-bold text-[#12D861]">Transactions</a></li>
+        </ul>
+
+        <!-- Logout at Bottom -->
+        <ul class="mb-12">
+            <li>
+            <a href="logout.php" class="ml-4 bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 text-xl">
+                Logout
+            </a>
+            </li>
+        </ul>
     </nav>
   </div>
 
   <!-- Main Content -->
-  <div class="bg-gray-300 p-6 rounded-lg shadow w-3/4">
+  <div class="bg-gray-300 p-6  w-3/4">
+  <div class="flex justify-between">
     <h2 class="text-2xl font-bold mb-4">Transaction History</h2>
+    <a href="export-pdf.php" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 mb-4 inline-block mr-4">
+      Download PDF
+    </a>
+  </div>
     <ul id="expenseList">
       <?php if (empty($expenses)): ?>
         <li class="p-2 border-b">No transactions yet</li>
       <?php else: ?>
         <?php foreach ($expenses as $expense): ?>
-          <li class="p-4 border-b text-xl flex justify-between items-center" id="expense-<?php echo $expense['id']; ?>">
+          <li class="p-4 border-b border-white text-xl flex justify-between items-center" id="expense-<?php echo $expense['id']; ?>">
             <div>
               <strong><?php echo htmlspecialchars($expense['category']); ?></strong> - ₹<?php echo htmlspecialchars($expense['amount']); ?>
               <span class="text-sm text-gray-700">(<?php echo htmlspecialchars($expense['date']); ?>)</span>
@@ -124,6 +138,7 @@ $total_expenses = $stmt->fetch()['total_expenses'];
 <!-- Sound Effects -->
 <audio id="success-sound" src="./sounds/success.wav" preload="auto"></audio>
 <audio id="error-sound" src="./sounds/error.wav" preload="auto"></audio>
+
 
 </body>
 </html>
