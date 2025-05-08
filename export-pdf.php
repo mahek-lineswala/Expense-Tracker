@@ -37,6 +37,6 @@ $dompdf->setPaper('A4', 'portrait');
 $dompdf->render();
 
 // Output to browser as download
-$dompdf->stream('transaction-history.pdf', ['Attachment' => 1]); // 1 = download
+$dompdf->stream('transaction-history.pdf', ['Attachment' => 0 ]); // 1 = download 0=open in browser
 exit();
 ?>

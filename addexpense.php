@@ -38,7 +38,7 @@ $total_expenses = $stmt->fetch()['total_expenses'];
 </head>
 <body class="bg-[#1c1c1c] min-h-screen flex jakarta-font">
     <div class="w-1/4 border-r">
-    <img src="./eTrackr logo1.png" alt="" class="w-28 ml-28 mt-4 ">
+    <img src="./eTrackr logo1.png" alt="" class="w-28 ml-28 mt-4 fixed">
     <nav class="text-white text-2xl ml-28 fixed h-screen flex flex-col justify-around">
         <!-- Top Links -->
         <ul class="space-y-8 mt-40">
@@ -46,7 +46,6 @@ $total_expenses = $stmt->fetch()['total_expenses'];
             <li><a href="addexpense.php" class="font-bold text-[#12D861]">Add expense</a></li>
             <li><a href="transactions.php" >Transactions</a></li>
         </ul>
-
         <!-- Logout at Bottom -->
         <ul class="mb-12">
             <li>

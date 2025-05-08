@@ -37,7 +37,7 @@ $total_expenses = $stmt->fetch()['total_expenses'];
 <body class="bg-[#1c1c1c] min-h-screen flex jakarta-font">
   <!-- Sidebar -->
   <div class="w-1/4 border-r ">
-  <img src="./eTrackr logo1.png" alt="" class="w-28 ml-28 mt-4 ">
+  <img src="./eTrackr logo1.png" alt="" class="w-28 ml-28 mt-4 fixed">
     <nav class="text-white text-2xl ml-28 fixed h-screen flex flex-col justify-around">
         <!-- Top Links -->
         <ul class="space-y-8 mt-40">
@@ -61,7 +61,7 @@ $total_expenses = $stmt->fetch()['total_expenses'];
   <div class="bg-gray-300 p-6  w-3/4">
   <div class="flex justify-between">
     <h2 class="text-2xl font-bold mb-4">Transaction History</h2>
-    <a href="export-pdf.php" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 mb-4 inline-block mr-4">
+    <a href="export-pdf.php" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 mb-4 inline-block mr-4">
       Download PDF
     </a>
   </div>

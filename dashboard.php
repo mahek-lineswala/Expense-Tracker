@@ -34,7 +34,7 @@ $total_expenses = $stmt->fetch()['total_expenses'];
 </head>
 <body class="bg-[#0f172a] min-h-screen flex jakarta-font">
   <div class="w-1/4 border-r bg-[#1c1c1c]">
-  <img src="./eTrackr logo1.png" alt="" class="w-28 ml-28 mt-4 ">
+  <img src="./eTrackr logo1.png" alt="" class="w-28 ml-28 mt-4 fixed">
     <nav class="text-white text-2xl ml-28 fixed h-screen flex flex-col justify-around">
         <!-- Top Links -->
         <ul class="space-y-8 mt-40">
