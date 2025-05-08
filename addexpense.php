@@ -38,24 +38,24 @@ $total_expenses = $stmt->fetch()['total_expenses'];
 </head>
 <body class="bg-[#1c1c1c] min-h-screen flex jakarta-font">
     <div class="w-1/4 border-r">
-        <h2 class="text-[#12D861] text-3xl text-center mt-4 font-bold fixed left-28 top-16"><span class="text-[#FF8A22]">e</span>Trackr</h2>
-        <nav class="text-white text-2xl ml-28 fixed h-screen flex flex-col justify-between">
-            <!-- Top Links -->
-            <ul class="space-y-8 mt-60">
-                <li><a href="dashboard.php">Dashboard</a></li>
-                <li><a href="addexpense.php" class="font-bold text-[#12D861]">Add expense</a></li>
-                <li><a href="transactions.php">Transactions</a></li>
-            </ul>
+    <img src="./eTrackr logo1.png" alt="" class="w-28 ml-28 mt-4 ">
+    <nav class="text-white text-2xl ml-28 fixed h-screen flex flex-col justify-around">
+        <!-- Top Links -->
+        <ul class="space-y-8 mt-40">
+            <li><a href="dashboard.php" >Dashboard</a></li>
+            <li><a href="addexpense.php" class="font-bold text-[#12D861]">Add expense</a></li>
+            <li><a href="transactions.php" >Transactions</a></li>
+        </ul>
 
-            <!-- Logout at Bottom -->
-            <ul class="mb-12">
-                <li>
-                <a href="logout.php" class="ml-4 bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 text-xl">
-                    Logout
-                </a>
-                </li>
-            </ul>
-        </nav>
+        <!-- Logout at Bottom -->
+        <ul class="mb-12">
+            <li>
+            <a href="logout.php" class="ml-4 bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 text-xl">
+                Logout
+            </a>
+            </li>
+        </ul>
+    </nav>
     </div>
     <div class="bg-[#0f172a] p-6 w-3/4">
                     <h2 class="text-2xl font-bold mb-4 text-white">Add Expense</h2>

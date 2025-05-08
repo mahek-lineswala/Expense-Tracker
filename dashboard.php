@@ -34,10 +34,10 @@ $total_expenses = $stmt->fetch()['total_expenses'];
 </head>
 <body class="bg-[#0f172a] min-h-screen flex jakarta-font">
   <div class="w-1/4 border-r bg-[#1c1c1c]">
-    <h2 class="text-[#12D861] text-3xl text-center mt-4 font-bold fixed left-28 top-16"><span class="text-[#FF8A22]">e</span>Trackr</h2>
-    <nav class="text-white text-2xl ml-28 fixed h-screen flex flex-col justify-between">
+  <img src="./eTrackr logo1.png" alt="" class="w-28 ml-28 mt-4 ">
+    <nav class="text-white text-2xl ml-28 fixed h-screen flex flex-col justify-around">
         <!-- Top Links -->
-        <ul class="space-y-8 mt-60">
+        <ul class="space-y-8 mt-40">
             <li><a href="#" class="font-bold text-[#12D861]">Dashboard</a></li>
             <li><a href="addexpense.php">Add expense</a></li>
             <li><a href="transactions.php">Transactions</a></li>
@@ -61,7 +61,7 @@ $total_expenses = $stmt->fetch()['total_expenses'];
           <div class="text-2xl text-white ml-14 font-bold"> Hello, <span><?php echo htmlspecialchars($user['name']); ?> 👋</span></div>
           <div class="bg-gray-300 p-6 rounded-lg shadow w-2/3 ml-20">
             <h2 class="text-gray-700 text-lg font-bold">Total Expenditure</h2>
-            <p class="text-2xl font-semibold">$<?php echo number_format($total_expenses, 2); ?></p>
+            <p class="text-2xl font-semibold">₹<?php echo number_format($total_expenses, 2); ?></p>
           </div>
         </div>
 
@@ -96,7 +96,7 @@ $total_expenses = $stmt->fetch()['total_expenses'];
     <form id="subForm">
       <input type="text" name="title" placeholder="Subscription Name" class="w-full p-2 mb-2 border border-gray-300 rounded" required>
       <input type="date" name="date" class="w-full p-2 mb-2 border border-gray-300 rounded" required>
-      <input type="number" name="amount" placeholder="Amount ($)" class="w-full p-2 mb-4 border border-gray-300 rounded" required>
+      <input type="number" name="amount" placeholder="Amount (₹)" class="w-full p-2 mb-4 border border-gray-300 rounded" required>
       <div class="flex justify-end space-x-2">
         <button type="button" onclick="closeSubModal()" class="px-4 py-2 bg-gray-300 rounded">Cancel</button>
         <button type="submit" class="px-4 py-2 bg-[#12D861] text-black font-bold rounded">Add</button>
@@ -194,7 +194,7 @@ function loadSubscriptions() {
       const list = document.getElementById('subscriptionList');
       list.innerHTML = '';
       data.forEach(sub => {
-        list.innerHTML += `<li>🔔 <strong>${sub.title}</strong> on ${sub.date} — $${sub.amount}</li>`;
+        list.innerHTML += `<li>🔔 <strong>${sub.title}</strong> on ${sub.date} — ₹${sub.amount}</li>`;
       });
     });
 }

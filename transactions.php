@@ -37,11 +37,11 @@ $total_expenses = $stmt->fetch()['total_expenses'];
 <body class="bg-[#1c1c1c] min-h-screen flex jakarta-font">
   <!-- Sidebar -->
   <div class="w-1/4 border-r ">
-    <h2 class="text-[#12D861] text-3xl text-center mt-4 font-bold fixed left-28 top-16"><span class="text-[#FF8A22]">e</span>Trackr</h2>
-    <nav class="text-white text-2xl ml-28 fixed h-screen flex flex-col justify-between">
+  <img src="./eTrackr logo1.png" alt="" class="w-28 ml-28 mt-4 ">
+    <nav class="text-white text-2xl ml-28 fixed h-screen flex flex-col justify-around">
         <!-- Top Links -->
-        <ul class="space-y-8 mt-60">
-            <li><a href="dashboard.php">Dashboard</a></li>
+        <ul class="space-y-8 mt-40">
+            <li><a href="dashboard.php" >Dashboard</a></li>
             <li><a href="addexpense.php">Add expense</a></li>
             <li><a href="transactions.php" class="font-bold text-[#12D861]">Transactions</a></li>
         </ul>
